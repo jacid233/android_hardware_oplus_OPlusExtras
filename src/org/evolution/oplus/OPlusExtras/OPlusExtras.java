@@ -59,7 +59,6 @@ import org.evolution.oplus.OPlusExtras.preferences.*;
 import org.evolution.oplus.OPlusExtras.R;
 import org.evolution.oplus.OPlusExtras.services.*;
 import org.evolution.oplus.OPlusExtras.slider.SliderConstants;
-import org.evolution.oplus.OPlusExtras.touch.TouchscreenGestureSettings;
 
 public class OPlusExtras extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -113,11 +112,9 @@ public class OPlusExtras extends PreferenceFragment
     private static TwoStatePreference mPowerShareModeSwitch;
 
     public static final String KEY_CATEGORY_TOUCHSCREEN = "touchscreen";
-    public static final String KEY_TOUCHSCREEN_GESTURES = "touchscreen_gestures";
     public static final String KEY_GAME_SWITCH = "game_mode";
     public static final String KEY_GAME_SWITCH_WARNING = "game_mode_warning";
     public static final String KEY_TP_EDGE_LIMIT_SWITCH = "tp_edge_limit";
-    private Preference mTouchScreenGestureSettings;
     private static TwoStatePreference mGameModeSwitch;
     private static TwoStatePreference mTPEdgeLimitModeSwitch;
 
@@ -334,14 +331,6 @@ public class OPlusExtras extends PreferenceFragment
         }
 
         boolean touchscreenCategory = false;
-
-        // TouchScreen Gestures
-        touchscreenCategory = touchscreenCategory | isFeatureSupported(context, R.bool.config_deviceSupportsTouchScreenGestures);
-        if (isFeatureSupported(context, R.bool.config_deviceSupportsTouchScreenGestures)) {
-        }
-        else {
-            findPreference(KEY_TOUCHSCREEN_GESTURES ).setVisible(false);
-        }
 
         // Game Mode
         touchscreenCategory = touchscreenCategory | isFeatureSupported(context, R.bool.config_deviceSupportsGameMode);

@@ -49,9 +49,6 @@
     <!-- Whether device supports wireless PowerShare -->
     <bool name="config_deviceSupportsPowerShare">false</bool>
 
-    <!-- Whether device supports Touch Screen Gestures -->
-    <bool name="config_deviceSupportsTouchScreenGestures">false</bool>
-
     <!-- Whether device supports GameMode -->
     <bool name="config_deviceSupportsGameMode">false</bool>
 
